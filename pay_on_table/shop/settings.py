@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     "shopping",
     "rest_framework",
     "django_filters",
-    "drf_yasg"
+    "drf_yasg",
+    "rest_framework_simplejwt"
 ]
 
 MIDDLEWARE = [
@@ -129,3 +130,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MIN_LENGTH_HASHIDS = 5
 ALPHABET_HASHIDS = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'
 SALT_HASHIDS = "R@W1sNyyI0sICsWA9J0ugEAtvbKzhkBD+D:atQvl"
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}
